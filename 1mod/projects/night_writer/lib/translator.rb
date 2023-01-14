@@ -1,6 +1,6 @@
 class Translator
 	attr_reader :text_to_braille
-	
+
 	def initialize
 		@text_to_braille = {
 			"a" => {top: "0.", middle: "..", bottom: ".."},
