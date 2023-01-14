@@ -1,5 +1,6 @@
 require 'simplecov'
 SimpleCov.start
-require 'pry'
+require './lib/data_manager'
+require './lib/translator'
 require 'rspec'
-require './lib/night_writer'
+require 'pry'
