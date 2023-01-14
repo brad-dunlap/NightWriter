@@ -1,17 +1,19 @@
+require './lib/alpha_to_braille'
 class NightWriter
-	attr_accessor :reader, :writer
+	attr_accessor :input, :output
 
 	def initialize
-		@reader = ARGV[0]
-		@writer = ARGV[1]
+		@input = ARGV[0]
+		@output = ARGV[1]
 	end
 
 	def run
-		incoming = File.open(@reader, "r")
+		incoming = File.open(@input, "r")
 		text = incoming.read
-	
-		outgoing = File.write(@writer, text)
-		p "Created #{@writer} containing #{text.length} characters"
+		dictionary = AlphaToBraille.new
+		translated = dictionary.translate_to_braille(File.read('./message.txt'))	
+		outgoing = File.write(@output, translated)
+		p "Created #{output} containing #{text.length} characters"
 	end
 end
 
