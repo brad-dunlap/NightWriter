@@ -1,5 +1,6 @@
 class NightWriter
 
-	def initialize
+	def initialize(input, output)
+
 	end
 end
