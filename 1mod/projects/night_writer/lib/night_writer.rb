@@ -1,4 +1,4 @@
-class DataManager
+class NightWriter
 	attr_accessor :reader, :writer
 
 	def initialize
@@ -14,3 +14,6 @@ class DataManager
 		p "Created #{@writer} containing #{text.length} characters"
 	end
 end
+
+night_writer = NightWriter.new
+night_writer.run

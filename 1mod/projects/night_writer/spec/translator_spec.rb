@@ -1,4 +1,5 @@
-require_relative 'spec_helper'
+# require_relative 'spec_helper'
+require './lib/translator'
 
 RSpec.describe Translator do
   let(:trans) {Translator.new}
