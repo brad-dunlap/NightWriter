@@ -10,15 +10,23 @@ class AlphaToBraille < Translator
 		top_row = []
 		middle_row = []
 		bottom_row = []
-		@text_to_braille.each do |k,v|
-			if k == input
-				v.each do |key, value|
-					if key == :top
-						top_row << value
-					elsif key == :middle
-						middle_row << value
-					else
-						bottom_row << value
+		input.chars.each do |char|
+			if char == " "
+				top_row << char
+				middle_row << char
+				bottom_row << char
+			else
+				@text_to_braille.each do |k,v|
+					if k == char
+						v.each do |key, value|
+							if key == :top
+								top_row << value
+							elsif key == :middle
+								middle_row << value
+							else
+								bottom_row << value
+							end
+						end
 					end
 				end
 			end
