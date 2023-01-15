@@ -1,5 +1,5 @@
 class Translator
-	attr_reader :text_to_braille
+	attr_reader :text_to_braille, :braille_to_text
 
 	def initialize
 		@text_to_braille = {
@@ -40,4 +40,6 @@ class Translator
       ";" => ["..", "0.", "0."]
 		}
 	end
+
+	@braille_to_text
 end
