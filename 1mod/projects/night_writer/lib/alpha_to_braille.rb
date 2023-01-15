@@ -7,7 +7,6 @@ class AlphaToBraille < Translator
 	end
 	
 	def translate_to_braille(input)
-
 		nested = input.chars.filter_map do |char|
 			@text_to_braille[char]
 		end
