@@ -1,21 +1,21 @@
-require './lib/alpha_to_braille'
-class NightWriter
+require './lib/braille_to_alpha'
+class NightReader
 	attr_accessor :input, :output, :dictionary
 
 	def initialize
 		@input = ARGV[0]
 		@output = ARGV[1]
-		@dictionary = AlphaToBraille.new
+		@dictionary = BrailleToAlpha.new
 	end
 
 	def run
 		incoming = File.open(@input, "r")
 		text = incoming.read
-		translated = dictionary.translate_to_braille(File.read('./braille.txt'))	
+		translated = File.read('./braille.txt')
 		outgoing = File.write(@output, translated)
 		p "Created #{output} containing #{text.length} characters"
 	end
 end
 
-night_writer = NightWriter.new
-night_writer.run
+night_reader = NightReader.new
+night_reader.run
