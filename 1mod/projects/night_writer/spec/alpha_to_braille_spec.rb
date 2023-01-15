@@ -11,7 +11,7 @@ RSpec.describe AlphaToBraille do
 		end
 
 		it 'has attributes' do
-			expect(alpha.text_to_braille["a"]).to eq({top: "0.", middle: "..", bottom: ".."})
+			expect(alpha.text_to_braille["a"]).to eq(["0.", "..", ".."])
 		end
 	end
 
