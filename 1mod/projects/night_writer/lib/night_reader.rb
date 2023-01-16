@@ -13,9 +13,9 @@ class NightReader
 		text = incoming.read
 		translated = dictionary.translate_to_text(text)
 		outgoing = File.write(@output, translated)
-		p "Created #{output} containing #{text.delete("\n").length} characters"
+		p "Created #{output} containing #{translated.length} characters"
 	end
 end
 
-night_reader = NightReader.new
-night_reader.run
+# night_reader = NightReader.new
+# night_reader.run
