@@ -11,9 +11,9 @@ class NightReader
 	def run
 		incoming = File.open(@input, "r")
 		text = incoming.read
-		translated = File.read('./braille.txt')
+		translated = dictionary.translate_to_text(text)
 		outgoing = File.write(@output, translated)
-		p "Created #{output} containing #{text.length} characters"
+		p "Created #{output} containing #{text.delete("\n").length} characters"
 	end
 end
 

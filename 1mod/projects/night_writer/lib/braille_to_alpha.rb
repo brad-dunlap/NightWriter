@@ -5,4 +5,8 @@ class BrailleToAlpha < Translator
 	def initialize
 		super
 	end
+
+	def translate_to_text(input)
+			@braille_to_text[input.split]		
+	end
 end
