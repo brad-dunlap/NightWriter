@@ -7,6 +7,19 @@ class BrailleToAlpha < Translator
 	end
 
 	def translate_to_text(input)
-			@braille_to_text[input.split]		
-	end
+		input_array = []
+		input_array << input.split.to_a
+
+		split_array = []
+		input_array.map do |braille|
+			braille.each do |row|
+				split_array << row.chars.each_slice(2).map(&:join)
+			end
+		end
+
+		text = split_array.transpose.map do |letter|
+			@braille_to_text[letter]
+		end
+		text.join
+	end			
 end
