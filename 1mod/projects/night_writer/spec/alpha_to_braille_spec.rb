@@ -17,7 +17,7 @@ RSpec.describe AlphaToBraille do
 
 	describe '#translate_to_braille' do
 		it 'translates a character to braille' do
-			expect(alpha.translate_to_braille(input)).to eq(output)
+			expect(alpha.translate_to_braille("hello")).to eq("0.0.0.0.0.\n00.00.0..0\n....0.0.0.")
 		end
 	end
 end
