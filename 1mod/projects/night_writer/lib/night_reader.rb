@@ -13,7 +13,7 @@ class NightReader
 		text = incoming.read
 		translated = dictionary.translate_to_text(text)
 		outgoing = File.write(@output, translated)
-		p "Created #{output} containing #{text.delete("\n").length} characters"
+		p "Created #{output} containing #{translated.length} characters"
 	end
 end
 
