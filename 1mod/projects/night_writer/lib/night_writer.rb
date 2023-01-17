@@ -11,7 +11,7 @@ class NightWriter
 	def run
 		incoming = File.open(@input, "r")
 		text = incoming.read
-		translated = dictionary.translate_to_braille(File.read('./message.txt'))	
+		translated = dictionary.translate_to_braille(text)	
 		outgoing = File.write(@output, translated)
 		p "Created #{output} containing #{text.length} characters"
 	end
