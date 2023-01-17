@@ -3,8 +3,6 @@ require './lib/braille_to_alpha'
 
 RSpec.describe BrailleToAlpha do
   let(:braille) {BrailleToAlpha.new}
-	input = File.read('./braille.txt')
-	output = File.read('./message.txt')
 
 	describe '#initialize' do
 		it 'exists' do
