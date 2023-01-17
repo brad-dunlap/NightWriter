@@ -11,6 +11,7 @@ RSpec.describe Translator do
 
 		it 'has attributes' do
 			expect(trans.text_to_braille["a"]).to eq(["0.", "..", ".."])
+			expect(trans.braille_to_text[["0.", "..", ".."]]).to eq("a")
 		end
 	end
 end

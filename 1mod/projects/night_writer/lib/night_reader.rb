@@ -17,5 +17,5 @@ class NightReader
 	end
 end
 
-# night_reader = NightReader.new
-# night_reader.run
+night_reader = NightReader.new
+night_reader.run
